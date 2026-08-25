@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 45%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 221 83% 45%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 45%;
+    --radius: 0.125rem; /* حواف حادة جداً لتعزيز المظهر الرسمي */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#f8fafc] text-foreground font-body;
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* HTML Lesson Content Styles - الطابع الأكاديمي الكلاسيكي */
+.html-content {
+  @apply w-full overflow-hidden;
+}
+.html-content h1 { @apply text-2xl font-black mb-6 text-slate-900 border-b-2 pb-4; }
+.html-content h2 { @apply text-xl font-black mb-4 mt-8 text-slate-800 border-r-4 border-primary pr-3; }
+.html-content h3 { @apply text-lg font-bold mb-3 mt-6 text-slate-700; }
+.html-content p { @apply mb-6 leading-loose text-slate-600 font-medium; }
+.html-content ul { @apply list-disc list-inside mb-6 space-y-2 pr-4 text-slate-600 font-medium; }
+.html-content ol { @apply list-decimal list-inside mb-6 space-y-2 pr-4 text-slate-600 font-medium; }
+.html-content li { @apply mb-1; }
+.html-content code { @apply bg-slate-50 px-1.5 py-0.5 rounded-sm font-code text-sm text-primary font-bold border; }
+.html-content pre { @apply bg-slate-50 text-slate-900 p-6 rounded-sm mb-6 overflow-x-auto font-code text-sm border-2 border-slate-100; }
+.html-content blockquote { @apply border-r-4 border-slate-300 pr-6 py-2 italic text-slate-500 mb-6 bg-slate-50 rounded-none; }
+.html-content img { @apply rounded-sm shadow-none mb-6 max-w-full h-auto mx-auto border; }
+.html-content table { @apply w-full border-collapse mb-8 border-2 rounded-none overflow-hidden bg-white; }
+.html-content th { @apply bg-slate-50 p-4 text-right font-black text-xs text-slate-600 border; }
+.html-content td { @apply p-4 text-right text-sm border text-slate-500 font-medium; }
+
+/* إزالة الظلال الحديثة والانحناءات الزائدة */
+.rounded-xl, .rounded-2xl, .rounded-3xl, .rounded-lg, .rounded-md { @apply rounded-sm !important; }
+.shadow-xl, .shadow-2xl, .shadow-lg, .shadow-md { @apply shadow-none !important; }
+.font-code { font-family: 'Fira Code', monospace; }
+
+/* أزرار رسمية */
+.btn-official {
+  @apply rounded-sm shadow-none border-2 font-black transition-all active:scale-[0.98];
+}

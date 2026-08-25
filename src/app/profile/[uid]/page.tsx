@@ -160,7 +160,10 @@ export default function PublicProfilePage() {
         await updateRtdb(ref(rtdb!, `users/${targetUid}`), updates);
         toast({ title: "تم تحديث إحصائيات كودفورسز ✨" });
       }
-    } catch (e) { toast({ variant: "destructive", title: "فشل الاتصال" }); }
+    } catch (e) {
+      console.error("Error refreshing CF stats:", e);
+      toast({ variant: "destructive", title: "فشل الاتصال" });
+    }
     finally { setIsRefreshing(false); }
   };
 

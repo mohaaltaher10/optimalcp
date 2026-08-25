@@ -82,6 +82,7 @@ export default function LoginPage() {
                router.push("/setup");
             }
           } catch (e) {
+            console.error("Error checking verification status:", e);
             router.push("/setup");
           }
         };
@@ -98,6 +99,7 @@ export default function LoginPage() {
     try {
       await loginWithGoogle();
     } catch (err: any) {
+      console.error("Google login error:", err);
       setError(getAuthErrorMessage(err.code));
     } finally {
       setIsLoading(false);
@@ -116,6 +118,7 @@ export default function LoginPage() {
         toast({ variant: "destructive", title: "لم يتم التفعيل بعد" });
       }
     } catch (e: any) {
+      console.error("Manual verify error:", e);
       toast({ variant: "destructive", title: "خطأ في التحديث" });
     } finally {
       setIsLoading(false);
@@ -136,6 +139,7 @@ export default function LoginPage() {
         description: "يرجى تفقد بريدك الإلكتروني لإعادة تعيين كلمة المرور."
       });
     } catch (err: any) {
+      console.error("Reset password error:", err);
       setError(getAuthErrorMessage(err.code));
     } finally {
       setIsLoading(false);
@@ -185,6 +189,7 @@ export default function LoginPage() {
         if (!userCredential.user.emailVerified) setVerificationSent(true);
       }
     } catch (err: any) {
+      console.error("Email auth error:", err);
       setError(err.code ? getAuthErrorMessage(err.code) : (err.message || "فشل تسجيل الدخول"));
     } finally {
       setIsLoading(false);

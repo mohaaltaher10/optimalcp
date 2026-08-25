@@ -244,6 +244,7 @@ export default function RoadmapManagementPage() {
       });
       toast({ title: "تم حفظ التغييرات بنجاح" });
     } catch (e) {
+      console.error("Error saving lessons to database:", e);
       toast({ variant: "destructive", title: "فشل الحفظ" });
     } finally {
       setIsSaving(false);
@@ -270,6 +271,7 @@ export default function RoadmapManagementPage() {
       setEditingStageId(null);
       setNewStageTitle("");
     } catch (e) {
+      console.error("Error saving stage meta:", e);
       toast({ variant: "destructive", title: "فشل العملية" });
     }
   };
@@ -279,7 +281,10 @@ export default function RoadmapManagementPage() {
       await remove(ref(rtdb!, `roadmap/${id}`));
       toast({ title: "تم الحذف" });
       if (activeStageId === id) setActiveStageId(null);
-    } catch (e) { toast({ variant: "destructive", title: "فشل الحذف" }); }
+    } catch (e) {
+      console.error("Error deleting stage:", e);
+      toast({ variant: "destructive", title: "فشل الحذف" });
+    }
   };
 
   if (authLoading) return <div className="flex h-screen items-center justify-center bg-white"><Loader2 className="animate-spin text-primary" /></div>;

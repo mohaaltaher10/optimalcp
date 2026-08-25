@@ -99,6 +99,7 @@ export default function AdminSupportPage() {
       setReplyText("");
       setActiveReplyTicket(null);
     } catch (e) {
+      console.error("Error replying to support ticket:", e);
       toast({ variant: "destructive", title: "فشل إرسال الرد" });
     } finally {
       setIsReplying(false);
@@ -110,6 +111,7 @@ export default function AdminSupportPage() {
       await deleteDoc(firestoreDoc(db!, `support_tickets/${ticketId}`));
       toast({ title: "تم حذف التذكرة نهائياً" });
     } catch (e) {
+      console.error("Error deleting support ticket:", e);
       toast({ variant: "destructive", title: "فشل الحذف" });
     }
   };
@@ -122,6 +124,7 @@ export default function AdminSupportPage() {
       });
       toast({ title: "تم تجاهل البلاغات وإعادة المنشور للحالة الآمنة" });
     } catch (e) {
+      console.error("Error ignoring reports:", e);
       toast({ variant: "destructive", title: "فشل التحديث" });
     }
   };
@@ -131,6 +134,7 @@ export default function AdminSupportPage() {
       await updateRtdb(ref(rtdb!, `forum/topics/${topicId}`), { status: 'deleted' });
       toast({ title: "تم حذف المنشور المخالف نهائياً" });
     } catch (e) {
+      console.error("Error deleting topic:", e);
       toast({ variant: "destructive", title: "فشل الحذف" });
     }
   };

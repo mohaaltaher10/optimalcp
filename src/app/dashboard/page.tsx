@@ -84,7 +84,7 @@ export default function AdminDashboardPage() {
         avgSolvedPerUser: totalUsers > 0 ? parseFloat((totalSolved / totalUsers).toFixed(1)) : 0,
         engagedUsersCount: engagedUsers
       });
-    } catch (e) { console.error("Fetch Error"); }
+    } catch (e) { console.error("Fetch Error:", e); }
   };
 
   const handleToggleMaintenance = async (checked: boolean) => {
@@ -93,6 +93,7 @@ export default function AdminDashboardPage() {
       await setRtdb(ref(rtdb, 'settings/maintenanceMode'), checked);
       toast({ title: checked ? "تم تفعيل وضع الصيانة 🛠️" : "تم إيقاف وضع الصيانة" });
     } catch (e) {
+      console.error("Error toggling maintenance mode:", e);
       toast({ variant: "destructive", title: "فشل تحديث الحالة" });
     }
   };
@@ -146,7 +147,10 @@ export default function AdminDashboardPage() {
       setFixReport(report);
       toast({ title: "اكتمل التدقيق العام بنجاح ✨" });
       fetchData();
-    } catch (e) { toast({ variant: "destructive", title: "فشل محرك الإصلاح" }); }
+    } catch (e) {
+      console.error("General fix error:", e);
+      toast({ variant: "destructive", title: "فشل محرك الإصلاح" });
+    }
     finally { setIsFixing(false); }
   };
 

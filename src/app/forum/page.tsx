@@ -122,6 +122,7 @@ export default function ForumPage() {
       setIsCreateDialogOpen(false);
       setNewTopic({ title: "", content: "", category: "general" });
     } catch (e) {
+      console.error("Error creating topic:", e);
       toast({ variant: "destructive", title: "فشل نشر الموضوع" });
     }
   };
@@ -132,6 +133,7 @@ export default function ForumPage() {
       await update(ref(rtdb!, `forum/topics/${topicId}`), { status: 'deleted' });
       toast({ title: "تم حذف الموضوع بنجاح" });
     } catch (e) {
+      console.error("Error deleting topic:", e);
       toast({ variant: "destructive", title: "فشل الحذف" });
     }
   };
@@ -159,6 +161,7 @@ export default function ForumPage() {
         toast({ title: "تم تسجيل بلاغك بنجاح" });
       }
     } catch (e) {
+      console.error("Error reporting topic:", e);
       toast({ variant: "destructive", title: "فشل الإبلاغ" });
     }
   };

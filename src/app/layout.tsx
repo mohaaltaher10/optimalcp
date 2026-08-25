@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     default: "أتقن البرمجة التنافسية | OptimalCP | أوبتيمال سي بي",
     template: "%s | OptimalCP"
   },
-  description: "المنصة العربية الأولى المتخصصة في تدريب المبرمجين على الخوارزميات والبرمجة التنافسية. اتبع خارطة طريق أكاديمية رصينة مع أوبتيمال سي بي (OptimalCP)، حل مسائل كودفورسز، وارتقِ بمستواك العالمي.",
+  description: "المنصة العربية الأولى المتخصصة في تدريب المبرمجين على الخوارزميات والبرمجة التنافسية. اتبع خارطة طريق أكاديمية محكمة مع أوبتيمال سي بي (OptimalCP)، حل مسائل كودفورسز، وارتقِ بمستواك العالمي.",
   keywords: ["برمجة", "خوارزميات", "برمجة تنافسية", "كودفورسز", "Codeforces", "Competitive Programming", "Algorithms", "تعلم البرمجة", "ليبيا", "أتقن البرمجة التنافسية", "أوبتيمال سي بي", "optimalcp", "optimal cp"],
-  authors: [{ name: "Artiatech Studio", url: "https://www.artiatechstudio.com.ly" }],
+  authors: [{ name: "Artiatech Studio", url: "https://artiatech.ly" }],
   creator: "Artiatech Studio",
   publisher: "Artiatech Studio",
   metadataBase: new URL('https://optimalcp.org.ly'),
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "أتقن البرمجة التنافسية | OptimalCP | أوبتيمال سي بي",
-    description: "انضم لأكبر مجتمع عربي لتعلم الخوارزميات وبنى المعطيات بأسلوب أكاديمي رصين مع أوبتيمال سي بي. أتقن البرمجة التنافسية الآن.",
+    description: "انضم لأكبر مجتمع عربي لتعلم الخوارزميات وبنى المعطيات بأسلوب أكاديمي محكم مع أوبتيمال سي بي. أتقن البرمجة التنافسية الآن.",
     url: "https://optimalcp.org.ly",
     siteName: "OptimalCP",
     locale: "ar_LY",

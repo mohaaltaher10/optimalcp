@@ -272,6 +272,7 @@ export default function ProblemsManagementStudio() {
       if (newPending.length > 0) selectProblem(newPending[0]);
       
     } catch (e: any) {
+      console.error("Error in bulk import:", e);
       toast({ variant: "destructive", title: "خطأ في التنسيق", description: e.message });
     }
   };
@@ -303,6 +304,7 @@ export default function ProblemsManagementStudio() {
       toast({ title: `تم حفظ المسألة ${probId} بنجاح` });
       setSelectedId(probId);
     } catch (e) {
+      console.error("Error saving problem:", e);
       toast({ variant: "destructive", title: "فشل حفظ البيانات" });
     } finally {
       setIsSaving(false);
@@ -324,6 +326,7 @@ export default function ProblemsManagementStudio() {
       toast({ title: "تم الحذف نهائياً" });
       setSelectedId(null);
     } catch (e) {
+      console.error("Error deleting problem:", e);
       toast({ variant: "destructive", title: "فشل الحذف" });
     }
   };
@@ -352,6 +355,7 @@ export default function ProblemsManagementStudio() {
       setSelectedId("NEW_PROBLEM");
       toast({ title: `تم الاستيراد بنجاح: ${result.id}` });
     } catch (e) {
+      console.error("Error importing problem:", e);
       toast({ variant: "destructive", title: "فشل الاستيراد التلقائي" });
     } finally {
       setIsImporting(false);

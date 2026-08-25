@@ -90,7 +90,7 @@ export default function ProblemsPage() {
       const upcoming = await getUpcomingContests();
       setContests(upcoming);
     } catch (e) {
-      console.error("Failed to load contests");
+      console.error("Failed to load contests:", e);
     } finally {
       setLoadingContests(false);
     }

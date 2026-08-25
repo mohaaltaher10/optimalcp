@@ -122,6 +122,7 @@ export default function TopicDetailPage() {
       setNewReply("");
       setTimeout(scrollToBottom, 100);
     } catch (e) {
+      console.error("Error sending reply:", e);
       toast({ variant: "destructive", title: "فشل إرسال الرد" });
     } finally {
       setIsSending(false);
@@ -137,6 +138,7 @@ export default function TopicDetailPage() {
       });
       toast({ title: "تم حذف الرد بنجاح" });
     } catch (e) {
+      console.error("Error deleting reply:", e);
       toast({ variant: "destructive", title: "فشل الحذف" });
     }
   };
@@ -164,6 +166,7 @@ export default function TopicDetailPage() {
         toast({ title: "تم تسجيل بلاغك بنجاح" });
       }
     } catch (e) {
+      console.error("Error reporting reply:", e);
       toast({ variant: "destructive", title: "فشل الإبلاغ" });
     }
   };

@@ -56,7 +56,7 @@ export default function SolveProblemPage() {
           setCfHandle(data.cfHandle);
         }
       } catch (e) {
-        console.error("User data fetch failed");
+        console.error("User data fetch failed:", e);
       }
     };
 
@@ -161,6 +161,7 @@ export default function SolveProblemPage() {
         }
       } else throw new Error(data.comment || "API Error");
     } catch (e) {
+      console.error("CF verification error:", e);
       setConsoleOutput(prev => [...prev, "[Error] فشل الاتصال بخادم كودفورسز."]);
     } finally {
       setIsVerifying(false);

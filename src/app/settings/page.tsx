@@ -105,6 +105,7 @@ export default function SettingsPage() {
       setOldUsername(profile.username);
       toast({ title: "تم تحديث الإعدادات بنجاح ✨" });
     } catch (e) { 
+      console.error("Error updating settings:", e);
       toast({ variant: "destructive", title: "فشل التحديث" }); 
     } finally { 
       setIsLoading(false); 
@@ -127,7 +128,10 @@ export default function SettingsPage() {
       });
       setTicket({ subject: "", message: "" });
       toast({ title: "تم إرسال بلاغك بنجاح" });
-    } catch (e) { toast({ variant: "destructive", title: "فشل الإرسال" }); }
+    } catch (e) {
+      console.error("Error sending support ticket:", e);
+      toast({ variant: "destructive", title: "فشل الإرسال" });
+    }
     finally { setIsSendingTicket(false); }
   };
 

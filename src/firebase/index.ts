@@ -26,7 +26,7 @@ const ADMIN_EMAILS = ['artiateech@gmail.com', 'artiatechstudio@gmail.com'];
 // تهيئة Firebase مرة واحدة فقط كـ Singleton لضمان استقرار الجلسات وسرعة الاستجابة
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);
+const db = getFirestore(app, firebaseConfig.firestoreDatabaseId || '(default)');
 const rtdb = getDatabase(app);
 
 // تصدير الكائنات الجاهزة للاستخدام المباشر
@@ -100,6 +100,7 @@ export function useAdmin() {
       }
       setLoading(false);
     }, (err) => {
+      console.error('Error fetching admin status:', err);
       setLoading(false);
     });
   }, [user, authLoading]);
@@ -121,7 +122,8 @@ export function useMaintenanceMode() {
     return onValue(maintenanceRef, (snapshot) => {
       setIsMaintenance(!!snapshot.val());
       setLoading(false);
-    }, () => {
+    }, (err) => {
+      console.error('Error fetching maintenance mode:', err);
       setIsMaintenance(false);
       setLoading(false);
     });

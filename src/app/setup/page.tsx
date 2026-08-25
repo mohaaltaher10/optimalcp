@@ -101,6 +101,7 @@ export default function OnboardingSetupPage() {
       toast({ title: "تم إكمال الملف الشخصي بنجاح ✨" });
       router.push("/roadmap");
     } catch (e) {
+      console.error("Error saving setup data:", e);
       toast({ variant: "destructive", title: "فشل حفظ البيانات" });
     } finally {
       setIsSaving(false);

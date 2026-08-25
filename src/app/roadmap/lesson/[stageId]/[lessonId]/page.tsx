@@ -116,6 +116,7 @@ export default function LessonDetailPage() {
       toast({ title: "رائع! تم إكمال الدرس", description: "+20 XP أضيفت لرصيدك" });
       router.push("/roadmap");
     } catch (e) {
+      console.error("Error finishing lesson:", e);
       toast({ variant: "destructive", title: "فشل تحديث التقدم" });
       setIsFinishing(false);
     }

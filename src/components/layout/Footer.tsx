@@ -24,7 +24,7 @@ export function Footer() {
     { id: 'tiktok', icon: TikTokIcon, href: 'https://www.tiktok.com/@artiatechstudio' },
     { id: 'instagram', icon: Instagram, href: 'https://www.instagram.com/artiatechstudio' },
     { id: 'x', icon: XIcon, href: 'https://twitter.com/artiatechstudio' },
-    { id: 'website', icon: Globe, href: 'https://www.artiatechstudio.com.ly' },
+    { id: 'website', icon: Globe, href: 'https://artiatech.ly' },
   ];
 
   return (
@@ -38,7 +38,7 @@ export function Footer() {
           
           <div className="text-center md:text-right">
             <p className="text-sm font-bold text-slate-700 mb-4">
-              تأسيس وإشراف: <a href="https://www.artiatechstudio.com.ly/" target="_blank" className="text-primary hover:underline">استوديو آرتياتك - Artiatech Studio</a>
+              تأسيس وإشراف: <a href="https://artiatech.ly" target="_blank" className="text-primary hover:underline">استوديو آرتياتك - Artiatech Studio</a>
             </p>
             <div className="flex justify-center md:justify-start gap-6 text-[11px] text-slate-400 font-bold">
               <Link href="/privacy" className="hover:text-primary transition-colors">سياسة الخصوصية</Link>

@@ -62,6 +62,7 @@ export function SetupGuard({ children }: { children: React.ReactNode }) {
           router.push("/setup");
         }
       } catch (e) {
+        console.error('Error in SetupGuard checkStatus:', e);
         setIsReady(true);
       }
     };

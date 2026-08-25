@@ -110,11 +110,11 @@ export default function Home() {
           <div className="container mx-auto px-6">
             <div className="max-w-3xl space-y-8 text-right">
               <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
-                منصة التدريب البرمجي <br />
-                <span className="text-primary underline decoration-4 underline-offset-8">طريقك للاحتراف</span>
+                منصة OptimalCP <br />
+                <span className="text-primary underline decoration-4 underline-offset-8">تعلم البرمجة التنافسية</span>
               </h1>
               <p className="text-lg text-slate-600 font-bold leading-relaxed max-w-2xl">
-                مسار تعليمي متكامل للبرمجة التنافسية. حل المسائل من كودفورسز، ارتقِ في الترتيب، وطور مهاراتك بشكل أكاديمي رصين ومدروس تحت إشراف نخبة من المبرمجين.
+                مسار تعليمي متكامل للبرمجة التنافسية. حل المسائل من كودفورسز، ارتقِ في الترتيب، وطور مهاراتك بشكل أكاديمي محكم ومدروس تحت إشراف نخبة من المبرمجين.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link href={user ? "/roadmap" : "/login"}>
@@ -138,14 +138,14 @@ export default function Home() {
                   <Map className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-black">خارطة طريق منظمة</h3>
-                <p className="text-sm text-slate-500 font-bold leading-relaxed">من الصفر حتى الاحتراف في الخوارزميات وبنى المعطيات بأسلوب علمي تراكمي دقيق.</p>
+                <p className="text-sm text-slate-500 font-bold leading-relaxed"> تدرج في الدروس وتعم الخورازميات والمفاهيم بشكل مدروس يناسب جميع المستويات.</p>
              </div>
              <div className="p-10 border-2 bg-white rounded-sm space-y-4 shadow-sm group hover:border-emerald-500/50 transition-colors">
                 <div className="w-14 h-14 bg-emerald-50 rounded-sm flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all">
                   <Code2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-black">تحكيم رسمي صارم</h3>
-                <p className="text-sm text-slate-500 font-bold leading-relaxed">نعتمد حصرياً على نتائج كودفورسز العالمية لضمان صحة ومصداقية الحلول البرمجية.</p>
+                <h3 className="text-xl font-black">تحكيم رسمي</h3>
+                <p className="text-sm text-slate-500 font-bold leading-relaxed">نعتمد حصرياً على نتائج كودفورسز لضمان صحة ومصداقية الحلول البرمجية.</p>
              </div>
              <div className="p-10 border-2 bg-white rounded-sm space-y-4 shadow-sm group hover:border-orange-500/50 transition-colors">
                 <div className="w-14 h-14 bg-orange-50 rounded-sm flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
@@ -160,8 +160,7 @@ export default function Home() {
         <section className="py-24 bg-slate-900 text-white">
           <div className="container mx-auto px-6 text-center space-y-12">
             <div className="space-y-4">
-              <h2 className="text-3xl font-black">بيانات المنصة الحقيقية</h2>
-              <p className="text-slate-400 text-sm font-bold">نحن نبني مجتمعاً برمجياً قائماً على الشفافية والنتائج الموثقة.</p>
+              <h2 className="text-3xl font-black">إحصائيات الوقت الفعلي</h2>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -180,7 +179,7 @@ export default function Home() {
                 ) : (
                   <div className="text-3xl md:text-4xl font-black text-white">{stats.trainees}</div>
                 )}
-                <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">متدرب طموح</p>
+                <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">متدرب</p>
               </div>
               
               <div className="space-y-2">

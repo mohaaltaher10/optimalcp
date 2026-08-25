@@ -35,7 +35,7 @@ export function MaintenanceGuard({ children }: { children: React.ReactNode }) {
             <Wrench className="w-12 h-12 text-primary animate-pulse" />
           </div>
           <h1 className="text-3xl font-black text-slate-900">الموقع تحت الصيانة الأكاديمية</h1>
-          <p className="text-slate-600 font-bold leading-relaxed">نحن نقوم بتحديث النظام حالياً لضمان أفضل تجربة برمجية رصينة ومستقرة. سنعود قريباً جداً.</p>
+          <p className="text-slate-600 font-bold leading-relaxed">نحن نقوم بتحديث النظام حالياً لضمان أفضل تجربة برمجية محكمة ومستقرة. سنعود قريباً جداً.</p>
           
           <div className="pt-8 border-t flex flex-col items-center gap-4">
             <Link href="/login">
